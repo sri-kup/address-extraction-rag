@@ -1,0 +1,2 @@
+VECTOR_STORE_DIR = "chroma_db"
+CHUNK_SIZE = 500

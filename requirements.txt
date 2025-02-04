@@ -1,0 +1,4 @@
+nltk
+chromadb
+PyPDF2
+groq
