@@ -1,8 +1,24 @@
-def chunk_text(text, chunk_size=500):
+import nltk
+from config import CHUNK_SIZE
+
+nltk.download('punkt', quiet=True)
+
+def chunk_text(text, chunk_size=CHUNK_SIZE):
     """
-    Splits the input text into chunks of specified size (basic version).
+    Splits text into chunks based on sentences with a max chunk size.
     """
+    sentences = nltk.sent_tokenize(text)
     chunks = []
-    for i in range(0, len(text), chunk_size):
-        chunks.append(text[i:i+chunk_size])
+    current_chunk = ""
+
+    for sentence in sentences:
+        if len(current_chunk) + len(sentence) <= chunk_size:
+            current_chunk += " " + sentence
+        else:
+            chunks.append(current_chunk.strip())
+            current_chunk = sentence
+
+    if current_chunk:
+        chunks.append(current_chunk.strip())
+
     return chunks
