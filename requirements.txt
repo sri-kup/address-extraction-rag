@@ -1,5 +1,15 @@
-nltk
+docling
+locationtagger
+lxml
+lxml_html_clean
 chromadb
-PyPDF2
 groq
+langchain-chroma>=0.1.2
+langchain-huggingface
+rake-nltk
+langchain-text-splitters
+tiktoken
+spacy
+sentence-transformers
+nltk
 python-dotenv
