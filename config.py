@@ -1,2 +1,6 @@
-VECTOR_STORE_DIR = "chroma_db"
-CHUNK_SIZE = 500
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # take environment variables from .env
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+CHROMA_COLLECTION_NAME = "Collection1"
